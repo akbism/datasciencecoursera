@@ -1,0 +1,31 @@
+# Getting and Cleaning Data Course Project script
+
+subject_test<-read.table("C:/Amar/4 R/Getting and Cleaning Data/UCI HAR Dataset/test/subject_test.txt")
+subject_train<-read.table("C:/Amar/4 R/Getting and Cleaning Data/UCI HAR Dataset/train/subject_train.txt")
+subject_total<-rbind(subject_test,subject_train)
+colnames(subject_total)="subject"
+activity_labels<-read.table("C:/Amar/4 R/Getting and Cleaning Data/UCI HAR Dataset/activity_labels.txt")
+activity_labels<-activity_labels[,-1]
+features<-read.table("C:/Amar/4 R/Getting and Cleaning Data/UCI HAR Dataset/features.txt")
+features<-features[,-1]
+X_test<-read.table("C:/Amar/4 R/Getting and Cleaning Data/UCI HAR Dataset/test/X_test.txt")
+X_train<-read.table("C:/Amar/4 R/Getting and Cleaning Data/UCI HAR Dataset/train/X_train.txt")
+X_total<-merge(X_test,X_train, all.x=TRUE, all.y=TRUE)
+colnames(X_total)<-features
+
+Y_test<-read.table("C:/Amar/4 R/Getting and Cleaning Data/UCI HAR Dataset/test/Y_test.txt")
+Y_train<-read.table("C:/Amar/4 R/Getting and Cleaning Data/UCI HAR Dataset/train/Y_train.txt")
+Y_total=rbind(Y_test,Y_train)
+colnames(Y_total)<-"activity"
+
+t<-grepl("mean\\()|std\\()",colnames(X_total))
+X_total1<-X_total[,t]
+X_final<-cbind(subject_total,Y_total,X_total1)
+
+X_final[X_final$activity==1,2]="WALKING"
+X_final[X_final$activity==2,2]="WALKING_UPSTAIRS"
+X_final[X_final$activity==3,2]="WALKING_DOWNSTAIRS"
+X_final[X_final$activity==4,2]="SITTING"
+X_final[X_final$activity==5,2]="STANDING"
+X_final[X_final$activity==6,2]="LAYING"
+X_final_tidied<-aggregate(x=X_final[,3:68], by = X_final[,1:2], FUN = "mean")
