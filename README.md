@@ -20,14 +20,3 @@ To make the data concise, one can also keep only average value of variables for 
 All steps performed by me for tidying the original data set have been explained in the CodeBook.md file.
 
 As per the instruction, I have only kept mean and standard deviation variables for each measurement. 
-
-
-
- You should create one R script called run_analysis.R that does the following. 
-Merges the training and the test sets to create one data set.
-Extracts only the measurements on the mean and standard deviation for each measurement. 
-Uses descriptive activity names to name the activities in the data set
-Appropriately labels the data set with descriptive variable names. 
-Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
-
-
