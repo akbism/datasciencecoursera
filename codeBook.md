@@ -10,22 +10,14 @@
  
 ### Variables used
 
-subject			2
-	Codes of the volunteers 
-	01-30
-activity		18
-	Activity names	
-		1 WALKING
-
-		2 WALKING_UPSTAIRS
-		
-            3 WALKING_DOWNSTAIRS
-
-		4 SITTING
-		
-            5 STANDING
-		
-            6 LAYING
+subject		Codes of the volunteers [1-30]
+activity	
+ * Laying
+ * Walkingdownstairs
+ * walkingupstairs
+ * sitting
+ * walking
+ * standing
 
 tBodyAcc-mean()-X	[-1,1]		
 tBodyAcc-mean()-Y	[-1,1]
