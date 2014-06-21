@@ -1,53 +1,132 @@
-Codebook.md
-      - what variables I used
-      - names of columns and why
-     -  units of data if known
-     - reference or link to original data info
+==================================================
+#  CodeBook
+## Getting and Cleaning Data Course Project
+==================================================
+## Amar Kumar, Coursera
+==================================================
+###Data Source:
+* https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+* http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+ 
+### Variables used
 
-I have downloaded the datasets from the given link.
-Source-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+subject			2
+	Codes of the volunteers 
+	01-30
+activity		18
+	Activity names	
+		1 WALKING
 
-First of all, I read the following files from the test and train folders:
-activity_labels.txt : Links the class labels with their activity name                                           [6    x 1]                                   
-features.txt        : list of all features                                                                      [561  x 1]
-subject_test.txt    : The file contains the code numbers of the subject for each line item in the test dataset  [2947 x 1]
-subject_train.txt   : The file contains the code numbers of the subject for each line item in the train dataset [7352 x 1]
-X_test.txt          : The file containes values of all features measured for the subjects mentioned in subject_test.txt   [2947 x 561]
-X_train.txt         : The file containes values of all features measured for the subjects mentioned in subject_train.txt  [7352 x 561]
-Y_test.txt          : Activities performed by the subjects corresponding to the subjects of the test dataset.   [2947 x 1]
-Y_train.txt         : Activities performed by the subjects corresponding to the subjects of the tRAIN dataset.  [7352 x 1]
+		2 WALKING_UPSTAIRS
+		
+            3 WALKING_DOWNSTAIRS
 
-Then I merged the test and train datasets.
+		4 SITTING
+		
+            5 STANDING
+		
+            6 LAYING
+
+tBodyAcc-mean()-X	[-1,1]		
+tBodyAcc-mean()-Y	[-1,1]
+tBodyAcc-mean()-Z	[-1,1]
+	Normalized mean value of time domain body signals from the accelerometer in X/Y/Z direction used to estimate variables of the feature vector for each pattern  
+tBodyAcc-std()-X	[-1,1]
+tBodyAcc-std()-Y	[-1,1]
+tBodyAcc-std()-Z	[-1,1]
+	Normalized standard deviation value of time domain body signals from the accelerometer in X/Y/Z direction used to estimate variables of the feature vector for each pattern  
+tGravityAcc-mean()-X	[-1,1]
+tGravityAcc-mean()-Y	[-1,1]
+tGravityAcc-mean()-Z	[-1,1]
+	Normalized mean value of time domain gravity signals in X/Y/Z direction used to estimate variables of the feature vector for each pattern 
+tGravityAcc-std()-X	[-1,1]
+tGravityAcc-std()-Y	[-1,1]
+tGravityAcc-std()-Z	[-1,1]
+	Normalized standard deviation value of time domain gravity signals in X/Y/Z direction used to estimate variables of the feature vector for each pattern 
+tBodyAccJerk-mean()-X	[-1,1]
+tBodyAccJerk-mean()-Y	[-1,1]
+tBodyAccJerk-mean()-Z	[-1,1]
+	Normalized mean value of time domain body linear jerk signals from the accelerometer in X/Y/Z direction used to estimate variables of the feature vector for each pattern
+tBodyAccJerk-std()-X	[-1,1]
+tBodyAccJerk-std()-Y	[-1,1]
+tBodyAccJerk-std()-Z	[-1,1]
+	Normalized standard deviation value of time domain body linear jerk signals from the accelerometer in X/Y/Z direction used to estimate variables of the feature vector for each pattern
+tBodyGyro-mean()-X	[-1,1]
+tBodyGyro-mean()-Y	[-1,1]
+tBodyGyro-mean()-Z	[-1,1]
+	Normalized mean value of time domain body signals from the gyroscope in X/Y/Z direction used to estimate variables of the feature vector for each pattern
+tBodyGyro-std()-X	[-1,1]
+tBodyGyro-std()-Y	[-1,1]
+tBodyGyro-std()-Z	[-1,1]
+	Normalized standard deviation value of time domain body signals from the gyroscope in X/Y/Z direction used to estimate variables of the feature vector for each pattern
+tBodyGyroJerk-mean()-X	[-1,1]
+tBodyGyroJerk-mean()-Y	[-1,1]
+tBodyGyroJerk-mean()-Z	[-1,1]
+	Normalized mean value of time domain body angular jerk signals from the gyroscope in X/Y/Z direction used to estimate variables of the feature vector for each pattern
+tBodyGyroJerk-std()-X	[-1,1]
+tBodyGyroJerk-std()-Y	[-1,1]
+tBodyGyroJerk-std()-Z	[-1,1]
+	Normalized standard deviation value of time domain body angular jerk signals from the gyroscope in X/Y/Z direction used to estimate variables of the feature vector for each pattern
+tBodyAccMag-mean()	[-1,1]
+	Normalized mean value of magnitude of three dimentional body signals from accelerometer calculated using Euclidean norm 
+tBodyAccMag-std()	[-1,1]
+	Normalized standard deviation value of magnitude of three dimentional body signals from accelerometer  calculated using Euclidean norm
+tGravityAccMag-mean()	[-1,1]
+	Normalized mean value of magnitude of three dimentional gravity signals from accelerometer  calculated using Euclidean norm 
+tGravityAccMag-std()	[-1,1]
+	Normalized standard deviation value of magnitude of three dimentional gravity signals from accelerometer calculated using Euclidean norm
+tBodyAccJerkMag-mean()	[-1,1]
+	Normalized mean value of magnitude of three dimentional body linerar signals from accelerometer calculated using Euclidean norm 
+tBodyAccJerkMag-std()	[-1,1]
+	Normalized standard deviation value of magnitude of three dimentional body linear signals from accelerometer calculated using Euclidean norm
+tBodyGyroMag-mean()	[-1,1]
+	Normalized mean value of magnitude of three dimentional body signals from gyroscope calculated using Euclidean norm 
+tBodyGyroMag-std()	[-1,1]
+	Normalized standard deviation value of magnitude of three dimentional body signals from gyroscope calculated using Euclidean norm
+tBodyGyroJerkMag-mean()	[-1,1]
+	Normalized mean value of magnitude of three dimentional body signals from gyroscope and accelerometer calculated using Euclidean norm 
+tBodyGyroJerkMag-std()	[-1,1]
+	Normalized standard deviation value of magnitude of three dimentional body signals from gyroscope and accelerometer calculated using Euclidean norm 
+fBodyAcc-mean()-X	[-1,1]
+fBodyAcc-mean()-Y	[-1,1]
+fBodyAcc-mean()-Z	[-1,1]
+	Normalized mean value of frequency domain signals calculated from applying Fast Fourier Transform (FFT) to tBodyAcc-mean()-X/Y/Z
+fBodyAcc-std()-X	[-1,1]
+fBodyAcc-std()-Y	[-1,1]
+fBodyAcc-std()-Z	[-1,1]
+	Normalized standard deviation value of frequency domain signals calculated from applying Fast Fourier Transform (FFT) to tBodyAcc-mean()-X/Y/Z
+fBodyAccJerk-mean()-X	[-1,1]
+fBodyAccJerk-mean()-Y	[-1,1]
+fBodyAccJerk-mean()-Z	[-1,1]
+	Normalized mean value of frequency domain signals calculated from applying Fast Fourier Transform (FFT) to tBodyAccJerk-mean()-X/Y/Z
+fBodyAccJerk-std()-X	[-1,1]
+fBodyAccJerk-std()-Y	[-1,1]
+fBodyAccJerk-std()-Z	[-1,1]
+	Normalized standard deviation value of frequency domain signals calculated from applying Fast Fourier Transform (FFT) to tBodyAccJerk-mean()-X/Y/Z
+fBodyGyro-mean()-X	[-1,1]
+fBodyGyro-mean()-Y	[-1,1]
+fBodyGyro-mean()-Z	[-1,1]
+	Normalized mean value of frequency domain signals calculated from applying Fast Fourier Transform (FFT) to tBodyGyro-mean()-X/Y/Z
+fBodyGyro-std()-X	[-1,1]
+fBodyGyro-std()-Y	[-1,1]
+fBodyGyro-std()-Z	[-1,1]
+	Normalized standard deviation value of frequency domain signals calculated from applying Fast Fourier Transform (FFT) to tBodyGyro-std()-X/Y/Z
+fBodyAccMag-mean()	[-1,1]
+	Normalized mean value of frequency domain signals calculated from applying Fast Fourier Transform (FFT) to tBodyAccMag-mean()
+fBodyAccMag-std()	[-1,1]
+	Normalized standard deviation value of frequency domain signals calculated from applying Fast Fourier Transform (FFT) to tBodyAccMag-std()
+fBodyBodyAccJerkMag-mean()	[-1,1]
+	Normalized mean value of frequency domain signals calculated from applying Fast Fourier Transform (FFT) to tBodyBodyAccJerkMag-mean()
+fBodyBodyAccJerkMag-std()	[-1,1]
+	Normalized standard deviation value of frequency domain signals calculated from applying Fast Fourier Transform (FFT) to tBodyBodyAccJerkMag-std()
+fBodyBodyGyroMag-mean()		[-1,1]
+	Normalized mean value of frequency domain signals calculated from applying Fast Fourier Transform (FFT) to tBodyBodyGyroMag-mean()
+fBodyBodyGyroMag-std()		[-1,1]
+	Normalized standard deviation value of frequency domain signals calculated from applying Fast Fourier Transform (FFT) to tBodyBodyGyroMag-std()
+fBodyBodyGyroJerkMag-mean()	[-1,1]	
+	Normalized mean value of frequency domain signals calculated from applying Fast Fourier Transform (FFT) to tBodyBodyGyroJerkMag-mean()
+fBodyBodyGyroJerkMag-std()	[-1,1]
+	Normalized standard deviation value of frequency domain signals calculated from applying Fast Fourier Transform (FFT) to tBodyBodyGyroJerkMag-std()
 
 
-  subject_test<-read.table("C:/Amar/4 R/Getting and Cleaning Data/UCI HAR Dataset/test/subject_test.txt")
-  subject_train<-read.table("C:/Amar/4 R/Getting and Cleaning Data/UCI HAR Dataset/train/subject_train.txt")
-  subject_total<-rbind(subject_test,subject_train)
-  colnames(subject_total)="subject"
-  activity_labels<-read.table("C:/Amar/4 R/Getting and Cleaning Data/UCI HAR Dataset/activity_labels.txt")
-  activity_labels<-activity_labels[,-1]
-  features<-read.table("C:/Amar/4 R/Getting and Cleaning Data/UCI HAR Dataset/features.txt")
-  features<-features[,-1]
-  X_test<-read.table("C:/Amar/4 R/Getting and Cleaning Data/UCI HAR Dataset/test/X_test.txt")
-  X_train<-read.table("C:/Amar/4 R/Getting and Cleaning Data/UCI HAR Dataset/train/X_train.txt")
-  X_total<-merge(X_test,X_train, all.x=TRUE, all.y=TRUE)
-  colnames(X_total)<-features
-  
-  Y_test<-read.table("C:/Amar/4 R/Getting and Cleaning Data/UCI HAR Dataset/test/Y_test.txt")
-  Y_train<-read.table("C:/Amar/4 R/Getting and Cleaning Data/UCI HAR Dataset/train/Y_train.txt")
-  Y_total=rbind(Y_test,Y_train)
-  colnames(Y_total)<-"activity"
-  
-  t<-grepl("mean\\()|std\\()",colnames(X_total))
-  X_total1<-X_total[,t]
-  X_final<-cbind(subject_total,Y_total,X_total1)
-  
-  X_final[X_final$activity==1,2]="WALKING"
-  X_final[X_final$activity==2,2]="WALKING_UPSTAIRS"
-  X_final[X_final$activity==3,2]="WALKING_DOWNSTAIRS"
-  X_final[X_final$activity==4,2]="SITTING"
-  X_final[X_final$activity==5,2]="STANDING"
-  X_final[X_final$activity==6,2]="LAYING"
-  X_final_tidied<-aggregate(x=X_final[,3:68], by = X_final[,1:2], FUN = "mean")
 
-     
