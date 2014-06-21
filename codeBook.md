@@ -1,5 +1,5 @@
 ==================================================
-#  CodeBook
+#  CodeBook for run_analysis.R
 ## Getting and Cleaning Data Course Project
 ==================================================
 ## Amar Kumar, Coursera
@@ -10,18 +10,18 @@
  
 ### Variables used
 
-subject		Codes of the volunteers [1-30]
-activity	
- * Laying
- * Walkingdownstairs
- * walkingupstairs
- * sitting
- * walking
- * standing
+* subject		Codes of the volunteers [1-30]
+* activity	
+	 * Laying
+	 * Walkingdownstairs
+	 * walkingupstairs
+	 * sitting
+	 * walking
+	 * standing
 
-tBodyAcc-mean()-X	[-1,1]		
-tBodyAcc-mean()-Y	[-1,1]
-tBodyAcc-mean()-Z	[-1,1]
+* tBodyAcc-mean()-X	[-1,1]		
+* tBodyAcc-mean()-Y	[-1,1]
+* tBodyAcc-mean()-Z	[-1,1]
 	Normalized mean value of time domain body signals from the accelerometer in X/Y/Z direction used to estimate variables of the feature vector for each pattern  
 tBodyAcc-std()-X	[-1,1]
 tBodyAcc-std()-Y	[-1,1]
